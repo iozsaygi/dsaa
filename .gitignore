@@ -51,6 +51,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Custom folders
+# Custom folders and files
 .idea/
 cmake-build-debug/
+.DS_Store
