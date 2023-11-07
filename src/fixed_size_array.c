@@ -31,10 +31,16 @@ void fsa_setAt(const fsa_t* fsa, size_t index, int value) {
     fsa->data[index] = value;
 }
 
+void fsa_setAll(const fsa_t* fsa, int value) {
+    for (size_t i = 0; i < fsa->length; i++) {
+        fsa_setAt(fsa, i, value);
+    }
+}
+
 void fsa_log(const fsa_t* fsa) {
     for (size_t i = 0; i < fsa->length; i++) {
         int valueAt = fsa_getAt(fsa, i);
-        printf("[%zu]->%d\n", i, valueAt);
+        printf("[%zu]: %d\n", i, valueAt);
     }
 }
 
@@ -43,13 +49,15 @@ void fsa_free(fsa_t* fsa) {
     free(fsa->data);
     free(fsa);
 
-    printf("Cleared resources for fixed size array instance");
+    printf("Cleared resources for fixed size array instance\n");
 }
 
 // ------------------------- TESTS -------------------------
 void fsa_test_0() {
+    printf("----- FSA TEST 0 -----\n");
     fsa_t* fsa = fsa_allocate(10);
     if (fsa == NULL) return;
+    fsa_setAll(fsa, 0);
 
     fsa_log(fsa);
     for (size_t i = 0; i < fsa->length; i++) {
@@ -70,15 +78,15 @@ void fsa_test_0() {
 }
 
 void fsa_test_1() {
+    printf("----- FSA TEST 1 -----\n");
     fsa_t* fsa = fsa_allocate(10);
     if (fsa == NULL) return;
+    fsa_setAll(fsa, 0);
 
     fsa_log(fsa);
     fsa_setAt(fsa, 4, -15);
     fsa_log(fsa);
-
-    // Implementing an exception here.
-    fsa_setAt(fsa, -3, 24);
+    fsa_setAt(fsa, 3, 24);
     fsa_log(fsa);
 
     fsa_free(fsa);

@@ -18,6 +18,9 @@ int fsa_getAt(const fsa_t* fsa, size_t index);
 // Sets the value at specific index to given value.
 void fsa_setAt(const fsa_t* fsa, size_t index, int value);
 
+// Updates the every element in the array with given value.
+void fsa_setAll(const fsa_t* fsa, int value);
+
 // Logs every element of fixed size array instance.
 void fsa_log(const fsa_t* fsa);
 
