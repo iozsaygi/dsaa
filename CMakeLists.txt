@@ -11,4 +11,7 @@ if (CMAKE_C_COMPILER_ID MATCHES "Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-newline-eof")
 endif ()
 
-add_executable(dsaa src/main.c)
+add_executable(dsaa src/main.c
+        src/fixed_size_array.c)
+
+include_directories(${CMAKE_SOURCE_DIR}/include)

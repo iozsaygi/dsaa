@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include "fixed_size_array.h"
 
 int main() {
-    printf("Hello, World!\n");
+    fsa_tests();
     return 0;
 }
