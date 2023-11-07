@@ -1,6 +1,6 @@
 #include "fixed_size_array.h"
 #include <assert.h>
-#include <printf.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 fsa_t* fsa_allocate(size_t length) {
