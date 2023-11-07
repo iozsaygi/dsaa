@@ -24,7 +24,9 @@ void fsa_log(const fsa_t* fsa);
 // Clears resources for fixed size array instance.
 void fsa_free(fsa_t* fsa);
 
-// Contains tests for fixed size array. (Will be called from main)
-void fsa_tests();
+// ------------------------- TESTS -------------------------
+void fsa_test_0();
+void fsa_test_1();
+// ---------------------------------------------------------
 
 #endif// !FIXED_SIZE_ARRAY_H

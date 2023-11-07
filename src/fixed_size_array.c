@@ -34,7 +34,7 @@ void fsa_setAt(const fsa_t* fsa, size_t index, int value) {
 void fsa_log(const fsa_t* fsa) {
     for (size_t i = 0; i < fsa->length; i++) {
         int valueAt = fsa_getAt(fsa, i);
-        printf("The value of element %zu is %d\n", i, valueAt);
+        printf("[%zu]->%d\n", i, valueAt);
     }
 }
 
@@ -46,7 +46,8 @@ void fsa_free(fsa_t* fsa) {
     printf("Cleared resources for fixed size array instance");
 }
 
-void fsa_tests() {
+// ------------------------- TESTS -------------------------
+void fsa_test_0() {
     fsa_t* fsa = fsa_allocate(10);
     if (fsa == NULL) return;
 
@@ -67,3 +68,17 @@ void fsa_tests() {
 
     fsa_free(fsa);
 }
+
+void fsa_test_1() {
+    fsa_t* fsa = fsa_allocate(10);
+    if (fsa == NULL) return;
+
+    fsa_log(fsa);
+    fsa_setAt(fsa, 4, -15);
+    fsa_log(fsa);
+
+    // Implementing an exception here.
+    fsa_setAt(fsa, -3, 24);
+    fsa_log(fsa);
+}
+// ---------------------------------------------------------
