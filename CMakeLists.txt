@@ -3,6 +3,13 @@ project(dsaa C)
 
 set(CMAKE_C_STANDARD 23)
 
+# Setting up options for MinGW based environment.
+if (MINGW)
+    message(STATUS "Adding extra compiler flags for MinGW")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+endif ()
+
 # Setting up options for Clang based environment.
 if (CMAKE_C_COMPILER_ID MATCHES "Clang")
     message(STATUS "Adding extra compiler flags for Clang")
