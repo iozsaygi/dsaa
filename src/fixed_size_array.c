@@ -80,5 +80,7 @@ void fsa_test_1() {
     // Implementing an exception here.
     fsa_setAt(fsa, -3, 24);
     fsa_log(fsa);
+
+    fsa_free(fsa);
 }
 // ---------------------------------------------------------
