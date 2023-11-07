@@ -21,6 +21,9 @@ void fsa_setAt(const fsa_t* fsa, size_t index, int value);
 // Updates the every element in the array with given value.
 void fsa_setAll(const fsa_t* fsa, int value);
 
+// Copies source fixed size array instance to destination instance.
+void fsa_copy(const fsa_t* src, const fsa_t* dst);
+
 // Logs every element of fixed size array instance.
 void fsa_log(const fsa_t* fsa);
 
@@ -30,6 +33,7 @@ void fsa_free(fsa_t* fsa);
 // ------------------------- TESTS -------------------------
 void fsa_test_0();
 void fsa_test_1();
+void fsa_test_2();
 // ---------------------------------------------------------
 
 #endif// !FIXED_SIZE_ARRAY_H

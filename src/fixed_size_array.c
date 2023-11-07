@@ -37,6 +37,15 @@ void fsa_setAll(const fsa_t* fsa, int value) {
     }
 }
 
+void fsa_copy(const fsa_t* src, const fsa_t* dst) {
+    assert(src != NULL && src->data != NULL);
+    assert(dst != NULL && dst->data != NULL);
+
+    for (size_t i = 0; i < dst->length; i++) {
+        fsa_setAt(dst, i, src->data[i]);
+    }
+}
+
 void fsa_log(const fsa_t* fsa) {
     for (size_t i = 0; i < fsa->length; i++) {
         int valueAt = fsa_getAt(fsa, i);
@@ -90,5 +99,24 @@ void fsa_test_1() {
     fsa_log(fsa);
 
     fsa_free(fsa);
+}
+
+void fsa_test_2() {
+    printf("----- FSA TEST 2 -----\n");
+    fsa_t* src = fsa_allocate(10);
+    fsa_t* dst = fsa_allocate(5);
+
+    fsa_setAll(src, 5);
+    fsa_setAll(dst, 0);
+
+    fsa_log(src);
+    fsa_log(dst);
+
+    fsa_copy(src, dst);
+    fsa_log(src);
+    fsa_log(dst);
+
+    fsa_free(src);
+    fsa_free(dst);
 }
 // ---------------------------------------------------------
