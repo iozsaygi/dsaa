@@ -6,7 +6,7 @@
 fsa_t* fsa_allocate(size_t length) {
     fsa_t* fsa = (fsa_t*) malloc(sizeof(fsa_t));
     if (fsa == NULL) {
-        printf("Failed to allocate memory for fixed size array");
+        perror("Failed to allocate memory for fixed size array");
         return NULL;
     }
 
@@ -14,7 +14,7 @@ fsa_t* fsa_allocate(size_t length) {
     fsa->data = (int*) malloc(sizeof(int) * fsa->length);
 
     if (fsa->data == NULL) {
-        printf("Failed to allocate memory for context for fixed size array");
+        perror("Failed to allocate memory for context for fixed size array");
         return NULL;
     }
 
