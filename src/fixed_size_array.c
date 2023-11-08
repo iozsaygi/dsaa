@@ -61,8 +61,9 @@ void fsa_log(const fsa_t* fsa) {
 
     for (size_t i = 0; i < fsa->length; i++) {
         int valueAt = fsa_getAt(fsa, i);
-        printf("[%zu]: %d\n", i, valueAt);
+        printf(" [%zu]: %d", i, valueAt);
     }
+    printf("\n");
 }
 
 void fsa_free(fsa_t* fsa) {
