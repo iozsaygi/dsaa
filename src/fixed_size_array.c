@@ -15,6 +15,7 @@ fsa_t* fsa_allocate(size_t length) {
 
     if (fsa->data == NULL) {
         perror("Failed to allocate memory for context for fixed size array");
+        free(fsa);
         return NULL;
     }
 
