@@ -22,16 +22,24 @@ fsa_t* fsa_allocate(size_t length) {
 }
 
 int fsa_getAt(const fsa_t* fsa, size_t index) {
+    assert(fsa != NULL);
+    assert(fsa->data != NULL);
     assert(index < fsa->length);
+
     return fsa->data[index];
 }
 
 void fsa_setAt(const fsa_t* fsa, size_t index, int value) {
+    assert(fsa != NULL);
+    assert(fsa->data != NULL);
     assert(index < fsa->length);
+
     fsa->data[index] = value;
 }
 
 void fsa_setAll(const fsa_t* fsa, int value) {
+    // Already considering NULL references at 'fsa_setAt' function.
+
     for (size_t i = 0; i < fsa->length; i++) {
         fsa_setAt(fsa, i, value);
     }
@@ -47,6 +55,9 @@ void fsa_copy(const fsa_t* src, const fsa_t* dst) {
 }
 
 void fsa_log(const fsa_t* fsa) {
+    assert(fsa != NULL);
+    assert(fsa->data != NULL);
+
     for (size_t i = 0; i < fsa->length; i++) {
         int valueAt = fsa_getAt(fsa, i);
         printf("[%zu]: %d\n", i, valueAt);
