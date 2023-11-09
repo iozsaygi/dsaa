@@ -27,7 +27,12 @@ int fsa_getAt(const fsa_t* fsa, size_t index) {
     assert(fsa->data != NULL);
     assert(index < fsa->length);
 
-    return fsa->data[index];
+    int* ptr = &fsa->data[0];
+    for (size_t i = 0; i < index; i++) {
+        ptr++;
+    }
+
+    return *ptr;
 }
 
 void fsa_setAt(const fsa_t* fsa, size_t index, int value) {
@@ -35,7 +40,12 @@ void fsa_setAt(const fsa_t* fsa, size_t index, int value) {
     assert(fsa->data != NULL);
     assert(index < fsa->length);
 
-    fsa->data[index] = value;
+    int* ptr = &fsa->data[0];
+    for (size_t i = 0; i < index; i++) {
+        ptr++;
+    }
+
+    *ptr = value;
 }
 
 void fsa_setAll(const fsa_t* fsa, int value) {
