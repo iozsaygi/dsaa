@@ -20,6 +20,7 @@ sll_t* sll_allocate() {
 
 void sll_traverse(const sll_t* sll) {
     assert(sll != NULL);
+    assert(sll->head != NULL);
 
     struct slln* current = sll->head;
 
