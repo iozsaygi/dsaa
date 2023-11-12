@@ -19,6 +19,7 @@ if (CMAKE_C_COMPILER_ID MATCHES "Clang")
 endif ()
 
 add_executable(dsaa src/main.c
-        src/fixed_size_array.c)
+        src/fixed_size_array.c
+        src/singly_linked_list.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
