@@ -1,15 +1,15 @@
 #include "dynamic_array.h"
 #include <assert.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 da_t* da_allocate(size_t length) {
-    da_t* da = (da_t *) malloc(sizeof(da_t));
+    da_t* da = (da_t*) malloc(sizeof(da_t));
     assert(da != NULL);
 
     da->capacity = length * 2;
-    da->data = (int *) calloc(0, sizeof(int) * da->capacity);
+    da->data = (int*) calloc(0, sizeof(int) * da->capacity);
     assert(da->data != NULL);
 
     da->length = length;
@@ -17,14 +17,14 @@ da_t* da_allocate(size_t length) {
     return da;
 }
 
-void da_append(da_t* da, int value ) {
+void da_append(da_t* da, int value) {
     // Check if we have enough room for this.
     if (da->length == da->capacity) {
         printf("Reallocating memory for dynamic array, length was %zu and capacity was %zu \n", da->length, da->capacity);
         da->capacity *= 2;
 
         // Allocate new memory for dynamic array.
-        int* ptr = (int *) realloc(da->data, sizeof(int) * da->capacity);
+        int* ptr = (int*) realloc(da->data, sizeof(int) * da->capacity);
 
         // Copy the context of existng array into new allocated one.
         memcpy(ptr, da->data, sizeof(int) * da->length);

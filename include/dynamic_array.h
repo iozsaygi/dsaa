@@ -27,4 +27,4 @@ void da_free(da_t* da);
 void da_test_0();
 // ---------------------------------------------------------
 
-#endif // !DYNAMIC_ARRAY_H
+#endif// !DYNAMIC_ARRAY_H

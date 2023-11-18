@@ -1,6 +1,6 @@
+#include "dynamic_array.h"
 #include "fixed_size_array.h"
 #include "singly_linked_list.h"
-#include "dynamic_array.h"
 
 int main() {
     // fsa_test_0();
