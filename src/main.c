@@ -11,6 +11,8 @@ int main() {
     // sll_test_1();
 
     da_test_0();
+    da_test_1();
+    da_test_2();
 
     return 0;
 }
