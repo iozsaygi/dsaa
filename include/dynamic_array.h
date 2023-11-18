@@ -17,6 +17,9 @@ da_t* da_allocate(size_t length);
 // Adds given value at the end of dynamic array.
 void da_append(da_t* da, int value);
 
+// Updates the existing value of dynamic array with the given new 'value'.
+void da_setAt(da_t* da, size_t index, int value);
+
 // Prints the value of dynamic array.
 void da_log(const da_t* da);
 

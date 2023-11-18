@@ -25,6 +25,7 @@ void da_append(da_t* da, int value) {
 
         // Allocate new memory for dynamic array.
         int* ptr = (int*) realloc(da->data, sizeof(int) * da->capacity);
+        assert(ptr != NULL);
 
         // Copy the context of existng array into new allocated one.
         memcpy(ptr, da->data, sizeof(int) * da->length);
@@ -34,6 +35,14 @@ void da_append(da_t* da, int value) {
 
     da->data[da->length] = value;
     da->length++;
+}
+
+void da_setAt(da_t* da, size_t index, int value) {
+    assert(da != NULL);
+    assert(da->data != NULL);
+    assert(index < da->length);
+
+    da->data[index] = value;
 }
 
 void da_log(const da_t* da) {
@@ -60,6 +69,7 @@ void da_test_0() {
     da_append(da, 1);
     da_append(da, 13);
     da_log(da);
+    da_setAt(da, 0, -14);
     da_append(da, 17);
     da_append(da, 21);
     da_log(da);
