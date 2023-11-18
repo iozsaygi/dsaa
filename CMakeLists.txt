@@ -20,6 +20,7 @@ endif ()
 
 add_executable(dsaa src/main.c
         src/fixed_size_array.c
-        src/singly_linked_list.c)
+        src/singly_linked_list.c
+        src/dynamic_array.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)

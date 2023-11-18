@@ -1,7 +1,7 @@
+// https://en.wikipedia.org/wiki/Linked_list
+
 #ifndef SINGLY_LINKED_LIST_H
 #define SINGLY_LINKED_LIST_H
-
-// https://en.wikipedia.org/wiki/Linked_list
 
 // Core declaration for singly linked list node.
 struct slln {
