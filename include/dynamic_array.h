@@ -5,8 +5,6 @@
 
 #include <stddef.h>
 
-#define INVALID_VALUE -1
-
 typedef struct {
     int* data;
     size_t length;
