@@ -1,5 +1,6 @@
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
+#include "queue.h"
 #include "singly_linked_list.h"
 #include "stack.h"
 
@@ -16,6 +17,8 @@ int main() {
     // da_test_2();
 
     // stack_test_0();
+
+    queue_test_0();
 
     return 0;
 }
