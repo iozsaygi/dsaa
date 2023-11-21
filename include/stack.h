@@ -9,22 +9,22 @@ typedef struct {
     int* data;
     size_t length;
     size_t capacity;
-} stack_t;
+} stck_t;
 
 // Allocates required resources for stack.
-stack_t* stack_allocate();
+stck_t* stack_allocate();
 
 // Adds given value at the end of stack.
-void stack_push(stack_t* stack, int value);
+void stack_push(stck_t* stack, int value);
 
 // Removes and returns last element of stack.
-int stack_pop(stack_t* stack);
+int stack_pop(stck_t* stack);
 
 // Prints values of stack members.
-void stack_log(const stack_t* stack);
+void stack_log(const stck_t* stack);
 
 // Clears allocated resources for stack.
-void stack_free(stack_t* stack);
+void stack_free(stck_t* stack);
 
 // ------------------------- TESTS -------------------------
 void stack_test_0();

@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-stack_t* stack_allocate() {
-    stack_t* stack = (stack_t*) malloc(sizeof(stack_t));
+stck_t* stack_allocate() {
+    stck_t* stack = (stck_t*) malloc(sizeof(stck_t));
     assert(stack != NULL);
 
     stack->length = 0;
@@ -17,7 +17,7 @@ stack_t* stack_allocate() {
     return stack;
 }
 
-void stack_push(stack_t* stack, int value) {
+void stack_push(stck_t* stack, int value) {
     assert(stack != NULL);
     assert(stack->data != NULL);
 
@@ -37,7 +37,7 @@ void stack_push(stack_t* stack, int value) {
     stack->length++;
 }
 
-int stack_pop(stack_t* stack) {
+int stack_pop(stck_t* stack) {
     assert(stack != NULL);
     assert(stack->data != NULL);
 
@@ -46,7 +46,7 @@ int stack_pop(stack_t* stack) {
     return lastElement;
 }
 
-void stack_log(const stack_t* stack) {
+void stack_log(const stck_t* stack) {
     assert(stack != NULL);
     assert(stack->data != NULL);
 
@@ -56,7 +56,7 @@ void stack_log(const stack_t* stack) {
     printf("\n");
 }
 
-void stack_free(stack_t* stack) {
+void stack_free(stck_t* stack) {
     free(stack->data);
     free(stack);
 }
@@ -64,7 +64,7 @@ void stack_free(stack_t* stack) {
 // ------------------------- TESTS -------------------------
 void stack_test_0() {
     printf("----- STACK TEST 0 -----\n");
-    stack_t* stack = stack_allocate();
+    stck_t* stack = stack_allocate();
     stack_push(stack, 4);
     stack_push(stack, 7);
     stack_push(stack, 2);
