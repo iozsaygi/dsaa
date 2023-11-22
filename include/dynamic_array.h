@@ -29,6 +29,9 @@ void da_remove(da_t* da);
 // Removes an element at given index from dynamic array.
 void da_removeAt(da_t* da, size_t index);
 
+// Keeps the actual memory for data structure but clears the memory of native array.
+void da_clear(da_t* da);
+
 // Prints the value of dynamic array.
 void da_log(const da_t* da);
 
@@ -39,6 +42,7 @@ void da_free(da_t* da);
 void da_test_0();
 void da_test_1();
 void da_test_2();
+void da_test_3();
 // ---------------------------------------------------------
 
 #endif// !DYNAMIC_ARRAY_H

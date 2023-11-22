@@ -26,7 +26,7 @@ void da_append(da_t* da, int value) {
         int* ptr = (int*) realloc(da->data, sizeof(int) * da->capacity);
         assert(ptr != NULL);
 
-        // Copy the context of existng array into new allocated one.
+        // Copy the context of existing array into new allocated one.
         memcpy(ptr, da->data, sizeof(int) * da->length);
 
         da->data = ptr;
@@ -103,6 +103,18 @@ void da_removeAt(da_t* da, size_t index) {
     da->data = ptr;
 }
 
+void da_clear(da_t* da) {
+    assert(da != NULL);
+    assert(da->data != NULL);
+
+    free(da->data);
+    da->length = 1;
+    da->capacity = 1;
+
+    da->data = calloc(0, sizeof(int) * da->capacity);
+    assert(da->data != NULL);
+}
+
 void da_log(const da_t* da) {
     assert(da != NULL);
 
@@ -162,6 +174,18 @@ void da_test_2() {
     da_log(da);
     da_insertAt(da, 0, 4);
     da_insertAt(da, 3, 5);
+    da_log(da);
+    da_free(da);
+}
+
+void da_test_3() {
+    printf("----- DA TEST 3 -----\n");
+    da_t* da = da_allocate(5);
+    da_append(da, 4);
+    da_append(da, 3);
+    da_append(da, 13);
+    da_log(da);
+    da_clear(da);
     da_log(da);
     da_free(da);
 }
