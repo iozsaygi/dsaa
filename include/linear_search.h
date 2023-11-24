@@ -5,7 +5,7 @@
 
 #include <stddef.h>
 
-#define INVALID_INDEX -1
+#define INVALID_INDEX (-1)
 
 size_t ls_findIndexOf(const int* data, size_t length, int target);
 
