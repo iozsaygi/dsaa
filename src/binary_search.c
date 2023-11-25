@@ -26,17 +26,23 @@ void bs_test_0() {
     int* array = malloc(sizeof(int) * length);
     assert(array != NULL);
 
-    array[0] = 16;
-    array[1] = 256;
-    array[2] = 4;
-    array[3] = 68;
-    array[4] = 101;
+    array[0] = 0;
+    array[1] = 1;
+    array[2] = 2;
+    array[3] = 3;
+    array[4] = 4;
 
     size_t firstPass = bs_findIndexOf(array, length, 14);
     assert(firstPass == INVALID_INDEX);
 
     size_t secondPass = bs_findIndexOf(array, length, 68);
-    assert(secondPass == 3);
+    assert(secondPass == INVALID_INDEX);
+
+    size_t thirdPass = bs_findIndexOf(array, length, 0);
+    assert(thirdPass == 0);
+
+    size_t fifthPass = bs_findIndexOf(array, length, 3);
+    assert(fifthPass == 3);
 
     free(array);
 }
