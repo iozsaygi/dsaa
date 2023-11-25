@@ -1,3 +1,4 @@
+#include "binary_search.h"
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
 #include "linear_search.h"
@@ -22,7 +23,9 @@ int main() {
 
     // queue_test_0();
 
-    ls_test_0();
+    // ls_test_0();
+
+    bs_test_0();
 
     return 0;
 }

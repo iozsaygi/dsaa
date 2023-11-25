@@ -24,6 +24,7 @@ add_executable(dsaa src/main.c
         src/dynamic_array.c
         src/stack.c
         src/queue.c
-        src/linear_search.c)
+        src/linear_search.c
+        src/binary_search.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
