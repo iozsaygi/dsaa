@@ -3,6 +3,7 @@
 #include "fixed_size_array.h"
 #include "linear_search.h"
 #include "queue.h"
+#include "selection_sort.h"
 #include "singly_linked_list.h"
 #include "stack.h"
 
@@ -24,8 +25,9 @@ int main() {
     // queue_test_0();
 
     // ls_test_0();
+    // bs_test_0();
 
-    bs_test_0();
+    ss_test_0();
 
     return 0;
 }
