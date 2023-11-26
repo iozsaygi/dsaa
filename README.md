@@ -5,6 +5,7 @@ It will hopefully grow over time.
 ## Included data structure implementations
 - Fixed size array
 - Singly linked list
+- Dynamic array
 - Stack
 - Queue
 
