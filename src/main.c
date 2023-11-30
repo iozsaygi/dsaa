@@ -2,6 +2,7 @@
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
 #include "linear_search.h"
+#include "newton_sqrt.h"
 #include "queue.h"
 #include "selection_sort.h"
 #include "singly_linked_list.h"
@@ -27,7 +28,9 @@ int main() {
     // ls_test_0();
     // bs_test_0();
 
-    ss_test_0();
+    // ss_test_0();
+
+    newton_sqrt_test_0();
 
     return 0;
 }
