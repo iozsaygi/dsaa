@@ -5,7 +5,7 @@
 float newton_sqrt(float number) {
     if (number <= 0.0f) return 0.0f;
 
-    float tolerance = 0.00001f;
+    const float tolerance = 0.00001f;
     float estimate = number;
 
     float root;
