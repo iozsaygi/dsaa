@@ -13,6 +13,7 @@ It will hopefully grow over time.
 - Linear search
 - Binary search
 - Selection sort
+- Newton's square root
 
 ## License
 [MIT License](https://github.com/iozsaygi/dsaa/blob/main/LICENSE)
