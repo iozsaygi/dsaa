@@ -27,6 +27,7 @@ add_executable(dsaa src/main.c
         src/linear_search.c
         src/binary_search.c
         src/selection_sort.c
-        src/newton_sqrt.c)
+        src/newton_sqrt.c
+        src/bubble_sort.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)

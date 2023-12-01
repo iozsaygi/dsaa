@@ -1,4 +1,5 @@
 #include "binary_search.h"
+#include "bubble_sort.h"
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
 #include "linear_search.h"
@@ -30,7 +31,9 @@ int main() {
 
     // ss_test_0();
 
-    newton_sqrt_test_0();
+    // newton_sqrt_test_0();
+
+    bsort_test_0();
 
     return 0;
 }

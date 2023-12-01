@@ -14,6 +14,7 @@ It will hopefully grow over time.
 - Binary search
 - Selection sort
 - Newton's square root
+- Bubble sort
 
 ## License
 [MIT License](https://github.com/iozsaygi/dsaa/blob/main/LICENSE)
