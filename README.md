@@ -15,6 +15,7 @@ It will hopefully grow over time.
 - Selection sort
 - Newton's square root
 - Bubble sort
+- Floyd's tortoise and hare
 
 ## License
 [MIT License](https://github.com/iozsaygi/dsaa/blob/main/LICENSE)

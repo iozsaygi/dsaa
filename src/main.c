@@ -2,6 +2,7 @@
 #include "bubble_sort.h"
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
+#include "floyd_tortoise_hare.h"
 #include "linear_search.h"
 #include "newton_sqrt.h"
 #include "queue.h"
@@ -33,7 +34,9 @@ int main() {
 
     // newton_sqrt_test_0();
 
-    bsort_test_0();
+    // bsort_test_0();
+
+    fth_test_0();
 
     return 0;
 }
