@@ -1,5 +1,6 @@
 #include "binary_search.h"
 #include "bubble_sort.h"
+#include "doubly_linked_list.h"
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
 #include "floyd_tortoise_hare.h"
@@ -36,7 +37,10 @@ int main() {
 
     // bsort_test_0();
 
-    fth_test_0();
+    // fth_test_0();
+
+    dll_test_0();
+    dll_test_1();
 
     return 0;
 }

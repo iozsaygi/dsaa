@@ -8,6 +8,7 @@ It will hopefully grow over time.
 - Dynamic array
 - Stack
 - Queue
+- Doubly linked list
 
 ## Included algorithm implementations
 - Linear search

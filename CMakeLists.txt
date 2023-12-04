@@ -29,6 +29,7 @@ add_executable(dsaa src/main.c
         src/selection_sort.c
         src/newton_sqrt.c
         src/bubble_sort.c
-        src/floyd_tortoise_hare.c)
+        src/floyd_tortoise_hare.c
+        src/doubly_linked_list.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
