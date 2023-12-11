@@ -27,6 +27,20 @@ unsigned int ht_hash(const ht_t* ht, key_t key) {
     return itr % ht->size;
 }
 
+void ht_print(const ht_t* ht) {
+    assert(ht != NULL);
+    assert(ht->data != NULL);
+
+    for (size_t i = 0; i < ht->size; i++) {
+        // Assuming if 'key' is null there is no 'value' at all.
+        if (ht->data[i].key.data == NULL) {
+            printf("NULLKEY\n");
+        } else {
+            printf("%s ----- %d\n", ht->data[i].key.data, ht->data[i].val->data);
+        }
+    }
+}
+
 void ht_free(ht_t* ht) {
     free(ht->data);
     ht->size = 0;
@@ -35,7 +49,15 @@ void ht_free(ht_t* ht) {
 
 // ------------------------- TESTS -------------------------
 void ht_test_0() {
-    ht_t* ht = ht_allocate(7);
+    ht_t* ht = ht_allocate(10);
+
+    // Initialize empty table.
+    for (size_t i = 0; i < ht->size; i++) {
+        kvp_t kvp = {.key = NULL, .val = NULL};
+        ht->data[i] = kvp;
+    }
+
+    ht_print(ht);
 
     // Test out hash calculations.
     key_t first = {.data = "first_key#1"};
