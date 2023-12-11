@@ -1,4 +1,5 @@
 // https://en.wikipedia.org/wiki/Hash_table
+// https://en.wikipedia.org/wiki/Linear_probing
 
 #ifndef HASH_TABLE_H
 #define HASH_TABLE_H

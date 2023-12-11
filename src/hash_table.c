@@ -49,12 +49,14 @@ void ht_insert(ht_t* ht, kvp_t kvp) {
 
     unsigned int hash = ht_hash(ht, kvp.key);
 
-    // Check for any collisions.
-    if (ht->data[hash].key.data == NULL) {
-        ht->data[hash].key.data = kvp.key.data;
-        ht->data[hash].val.data = kvp.val.data;
-    } else {
-        // Collision occured.
+    // Handling collisions with linear probing. If this fails, this means the table is pretty much full.
+    for (size_t i = 0; i < ht->size; i++) {
+        unsigned int next = (i + hash) % ht->size;
+        if (ht->data[next].key.data == NULL) {
+            ht->data[next].key.data = strdup(kvp.key.data);
+            ht->data[next].val.data = kvp.val.data;
+            break;
+        }
     }
 }
 
@@ -64,13 +66,18 @@ val_t ht_lookup(const ht_t* ht, key_t key) {
 
     unsigned int hash = ht_hash(ht, key);
 
-    // Check if key exists in table.
-    if (ht->data[hash].key.data != NULL && strcmp(ht->data[hash].key.data, key.data) == 0) {
-        return ht->data[hash].val;
-    } else {
-        val_t invalid = {.data = INVALID_VALUE};
-        return invalid;
+    for (size_t i = 0; i < ht->size; i++) {
+        unsigned int next = (i + hash) % ht->size;
+        // Check if key exists in table.
+        if (ht->data[next].key.data != NULL && strcmp(ht->data[next].key.data, key.data) == 0) {
+            return ht->data[next].val;
+        } else {
+            break;
+        }
     }
+
+    val_t invalid = {.data = INVALID_VALUE};
+    return invalid;
 }
 
 void ht_delete(ht_t* ht, key_t key) {
@@ -79,14 +86,28 @@ void ht_delete(ht_t* ht, key_t key) {
 
     unsigned int hash = ht_hash(ht, key);
 
-    if (ht->data[hash].key.data != NULL && strcmp(ht->data[hash].key.data, key.data) == 0) {
-        val_t val = {.data = INVALID_VALUE};
-        kvp_t kvp = {.key = NULL, val = val};
-        ht->data[hash] = kvp;
+    for (size_t i = 0; i < ht->size; i++) {
+        unsigned int next = (i + hash) % ht->size;
+        // Check if key exists in table.
+        if (ht->data[next].key.data != NULL && strcmp(ht->data[next].key.data, key.data) == 0) {
+            free(ht->data[next].key.data);
+            ht->data[next].key.data = NULL;
+            ht->data[next].val.data = INVALID_VALUE;
+            break;
+        } else {
+            break;
+        }
     }
 }
 
 void ht_free(ht_t* ht) {
+    assert(ht != NULL);
+    assert(ht->data != NULL);
+
+    for (size_t i = 0; i < ht->size; i++) {
+        free(ht->data[i].key.data);
+    }
+
     free(ht->data);
     ht->size = 0;
     free(ht);
