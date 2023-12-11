@@ -15,8 +15,14 @@ typedef struct {
     int data;
 } val_t;
 
+// Key value pairs.
 typedef struct {
-    int* data;
+    key_t key;
+    val_t val;
+} kvp_t;
+
+typedef struct {
+    kvp_t* data;
     size_t size;
 } ht_t;
 
