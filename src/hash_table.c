@@ -73,6 +73,19 @@ val_t ht_lookup(const ht_t* ht, key_t key) {
     }
 }
 
+void ht_delete(ht_t* ht, key_t key) {
+    assert(ht != NULL);
+    assert(ht->data != NULL);
+
+    unsigned int hash = ht_hash(ht, key);
+
+    if (ht->data[hash].key.data != NULL && strcmp(ht->data[hash].key.data, key.data) == 0) {
+        val_t val = {.data = INVALID_VALUE};
+        kvp_t kvp = {.key = NULL, val = val};
+        ht->data[hash] = kvp;
+    }
+}
+
 void ht_free(ht_t* ht) {
     free(ht->data);
     ht->size = 0;
@@ -118,13 +131,19 @@ void ht_test_0() {
     ht_print(ht);
 
     // Test out the 'lookup' function.
-    key_t fkey = {.data = "fourth_key#4"};
-    val_t flu = ht_lookup(ht, fkey);
+    key_t skey = {.data = "second_key#2"};
+    val_t flu = ht_lookup(ht, skey);
     printf("%d\n", flu.data);
 
-    key_t skey = {.data = "wrong_key#123123"};
-    val_t slu = ht_lookup(ht, skey);
+    key_t wkey = {.data = "wrong_key#123123"};
+    val_t slu = ht_lookup(ht, wkey);
     printf("%d\n", slu.data);
+    printf("------------------------------\n");
+
+    // Remove an element from table.
+    ht_delete(ht, skey);
+    ht_print(ht);
+    printf("------------------------------\n");
 
     ht_free(ht);
 }
