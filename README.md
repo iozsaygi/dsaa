@@ -9,6 +9,7 @@ It will hopefully grow over time.
 - Stack
 - Queue
 - Doubly linked list
+- Hash table
 
 ## Included algorithm implementations
 - Linear search

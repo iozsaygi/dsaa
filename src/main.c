@@ -4,6 +4,7 @@
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
 #include "floyd_tortoise_hare.h"
+#include "hash_table.h"
 #include "linear_search.h"
 #include "newton_sqrt.h"
 #include "queue.h"
@@ -39,8 +40,10 @@ int main() {
 
     // fth_test_0();
 
-    dll_test_0();
-    dll_test_1();
+    // dll_test_0();
+    // dll_test_1();
+
+    ht_test_0();
 
     return 0;
 }
