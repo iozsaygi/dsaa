@@ -5,6 +5,8 @@
 
 #include <stdlib.h>
 
+#define INVALID_VALUE INT_MIN
+
 // Assuming keys are raw strings.
 typedef struct {
     char* data;
@@ -37,6 +39,9 @@ void ht_print(const ht_t* ht);
 
 // Adds given key value pair into table.
 void ht_insert(ht_t* ht, kvp_t kvp);
+
+// Returns the value of the given key.
+val_t ht_lookup(const ht_t* ht, key_t key);
 
 // Clears allocated resources for hash table.
 void ht_free(ht_t* ht);

@@ -1,6 +1,7 @@
 #include "hash_table.h"
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 
 ht_t* ht_allocate(size_t size) {
     ht_t* ht = (ht_t*) malloc(sizeof(ht_t));
@@ -36,7 +37,7 @@ void ht_print(const ht_t* ht) {
         if (ht->data[i].key.data == NULL) {
             printf("NULLKEY\n");
         } else {
-            printf("%s ----- %d\n", ht->data[i].key.data, ht->data[i].val.data);
+            printf("%s -----> %d\n", ht->data[i].key.data, ht->data[i].val.data);
         }
     }
     printf("------------------------------\n");
@@ -57,6 +58,21 @@ void ht_insert(ht_t* ht, kvp_t kvp) {
     }
 }
 
+val_t ht_lookup(const ht_t* ht, key_t key) {
+    assert(ht != NULL);
+    assert(ht->data != NULL);
+
+    unsigned int hash = ht_hash(ht, key);
+
+    // Check if key exists in table.
+    if (ht->data[hash].key.data != NULL && strcmp(ht->data[hash].key.data, key.data) == 0) {
+        return ht->data[hash].val;
+    } else {
+        val_t invalid = {.data = INVALID_VALUE};
+        return invalid;
+    }
+}
+
 void ht_free(ht_t* ht) {
     free(ht->data);
     ht->size = 0;
@@ -69,7 +85,8 @@ void ht_test_0() {
 
     // Initialize empty table.
     for (size_t i = 0; i < ht->size; i++) {
-        kvp_t kvp = {.key = NULL};
+        val_t val = {.data = INVALID_VALUE};
+        kvp_t kvp = {.key = NULL, val = val};
         ht->data[i] = kvp;
     }
 
@@ -99,6 +116,15 @@ void ht_test_0() {
     ht_insert(ht, fikvp);
 
     ht_print(ht);
+
+    // Test out the 'lookup' function.
+    key_t fkey = {.data = "fourth_key#4"};
+    val_t flu = ht_lookup(ht, fkey);
+    printf("%d\n", flu.data);
+
+    key_t skey = {.data = "wrong_key#123123"};
+    val_t slu = ht_lookup(ht, skey);
+    printf("%d\n", slu.data);
 
     ht_free(ht);
 }
