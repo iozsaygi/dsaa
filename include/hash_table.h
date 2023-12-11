@@ -18,7 +18,7 @@ typedef struct {
 // Key value pairs.
 typedef struct {
     key_t key;
-    val_t* val;
+    val_t val;
 } kvp_t;
 
 typedef struct {
@@ -34,6 +34,9 @@ unsigned int ht_hash(const ht_t* ht, key_t key);
 
 // Prints the keys and values of hash table.
 void ht_print(const ht_t* ht);
+
+// Adds given key value pair into table.
+void ht_insert(ht_t* ht, kvp_t kvp);
 
 // Clears allocated resources for hash table.
 void ht_free(ht_t* ht);
