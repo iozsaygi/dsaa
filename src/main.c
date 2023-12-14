@@ -1,5 +1,6 @@
 #include "binary_search.h"
 #include "bubble_sort.h"
+#include "counting_sort.h"
 #include "doubly_linked_list.h"
 #include "dynamic_array.h"
 #include "fixed_size_array.h"
@@ -43,7 +44,9 @@ int main() {
     // dll_test_0();
     // dll_test_1();
 
-    ht_test_0();
+    // ht_test_0();
+
+    cs_test_0();
 
     return 0;
 }

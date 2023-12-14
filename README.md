@@ -21,6 +21,7 @@ It will hopefully grow over time.
 - Newton's square root
 - Bubble sort
 - Floyd's tortoise and hare
+- Counting sort
 
 ## License
 
