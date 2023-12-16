@@ -12,6 +12,7 @@ It will hopefully grow over time.
 - Queue
 - Doubly linked list
 - Hash table with linear probing
+- Binary tree
 
 ## Included algorithm implementations
 

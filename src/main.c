@@ -1,4 +1,5 @@
 #include "binary_search.h"
+#include "binary_tree.h"
 #include "bubble_sort.h"
 #include "counting_sort.h"
 #include "doubly_linked_list.h"
@@ -46,7 +47,9 @@ int main() {
 
     // ht_test_0();
 
-    cs_test_0();
+    // cs_test_0();
+
+    bt_test_0();
 
     return 0;
 }

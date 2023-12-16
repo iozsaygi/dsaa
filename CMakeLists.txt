@@ -32,6 +32,7 @@ add_executable(dsaa src/main.c
         src/floyd_tortoise_hare.c
         src/doubly_linked_list.c
         src/hash_table.c
-        src/counting_sort.c)
+        src/counting_sort.c
+        src/binary_tree.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
