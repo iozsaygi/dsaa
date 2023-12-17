@@ -91,7 +91,7 @@ struct btn* bt_remove(struct btn* root, int ctx) {// NOLINT(*-no-recursion)
     return root;
 }
 
-struct btn* bt_find(struct btn* root, int ctx) { // NOLINT(*-no-recursion)
+struct btn* bt_find(struct btn* root, int ctx) {// NOLINT(*-no-recursion)
     if (root == NULL || root->ctx == ctx) {
         return root;
     }
