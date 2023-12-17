@@ -27,6 +27,9 @@ struct btn* bt_insert(bt_t* bt, int ctx);
 // Recursively removes the node with given value from binary tree.
 struct btn* bt_remove(struct btn* root, int ctx);
 
+// Returns the binary tree node with given context.
+struct btn* bt_find(struct btn* root, int ctx);
+
 // Clears allocated resources for binary tree nodes.
 void bt_freeNodes(struct btn* root);
 

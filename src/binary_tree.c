@@ -91,6 +91,19 @@ struct btn* bt_remove(struct btn* root, int ctx) {// NOLINT(*-no-recursion)
     return root;
 }
 
+struct btn* bt_find(struct btn* root, int ctx) { // NOLINT(*-no-recursion)
+    if (root == NULL || root->ctx == ctx) {
+        return root;
+    }
+
+    if (ctx < root->ctx) {
+        // Search in left branch.
+        return bt_find(root->left, ctx);
+    } else {
+        return bt_find(root->right, ctx);
+    }
+}
+
 void bt_freeNodes(struct btn* root) {// NOLINT(*-no-recursion)
     if (root != NULL) {
         bt_freeNodes(root->left);
@@ -128,6 +141,20 @@ void bt_test_0() {
 
     bt_preOrderTraversal(first);
     printf("\n------------------------------\n");
+
+    struct btn* sr = bt_find(bt->root, 3);
+    if (sr != NULL) {
+        struct btn* left = sr->left;
+        struct btn* right = sr->right;
+
+        if (left != NULL) {
+            printf("Left: %d\n", left->ctx);
+        }
+
+        if (right != NULL) {
+            printf("Right: %d\n", right->ctx);
+        }
+    }
 
     bt_freeNodes(first);
     bt_free(bt);
