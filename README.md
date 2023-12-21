@@ -23,6 +23,7 @@ It will hopefully grow over time.
 - Bubble sort
 - Floyd's tortoise and hare
 - Counting sort
+- Linear congruential generator
 
 ## License
 

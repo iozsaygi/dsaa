@@ -7,6 +7,7 @@
 #include "fixed_size_array.h"
 #include "floyd_tortoise_hare.h"
 #include "hash_table.h"
+#include "linear_congruential_generator.h"
 #include "linear_search.h"
 #include "newton_sqrt.h"
 #include "queue.h"
@@ -49,7 +50,9 @@ int main() {
 
     // cs_test_0();
 
-    bt_test_0();
+    // bt_test_0();
+
+    lcg_test_0();
 
     return 0;
 }
