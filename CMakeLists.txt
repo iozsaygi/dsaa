@@ -3,6 +3,13 @@ project(dsaa C)
 
 set(CMAKE_C_STANDARD 23)
 
+# Check if we are running on Windows based system.
+if (WIN32)
+    # Add a specific define symbol for Windows to enable usage of WINAPI.
+    message(STATUS "Adding extra compile definitions for Windows")
+    add_compile_definitions(DSAA_WINAPI)
+endif ()
+
 # Setting up options for MinGW based environment.
 if (MINGW)
     message(STATUS "Adding extra compiler flags for MinGW")

@@ -1,8 +1,11 @@
 #include "sleep_sort.h"
 #include <assert.h>
+#ifdef DSAA_WINAPI
 #include <process.h>
+#endif// DSAA_WINAPI
 #include <stdio.h>
 
+#ifdef DSAA_WINAPI
 unsigned int __stdcall sleepSort_thread(void* data) {
     int* cast = (int*) data;
     int sec = *cast;
@@ -10,10 +13,11 @@ unsigned int __stdcall sleepSort_thread(void* data) {
     Sleep(sec * 1000);
     printf("%d, ", sec);
 }
+#endif// DSAA_WINAPI
 
 void sleepSort_execute(int* array, size_t length) {
     // TODO: Port this to UNIX later on.
-
+#ifdef DSAA_WINAPI
     assert(array != NULL);
 
     HANDLE* threadHandles = (HANDLE*) malloc(sizeof(HANDLE) * length);
@@ -33,6 +37,9 @@ void sleepSort_execute(int* array, size_t length) {
     }
 
     free(threadHandles);
+#else
+    printf("Sleep sort needs to be ported to your current OS first");
+#endif// DSAA_WINAPI
 }
 
 // ------------------------- TESTS -------------------------

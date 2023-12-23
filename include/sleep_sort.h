@@ -4,9 +4,12 @@
 #define SLEEP_SORT_H
 
 #include <stdlib.h>
+
+#ifdef DSAA_WINAPI
 #include <windows.h>
 
 unsigned int __stdcall sleepSort_thread(void* data);
+#endif// DSAA_WINAPI
 
 void sleepSort_execute(int* array, size_t length);
 
