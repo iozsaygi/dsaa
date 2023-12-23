@@ -24,6 +24,7 @@ It will hopefully grow over time.
 - Floyd's tortoise and hare
 - Counting sort
 - Linear congruential generator
+- Sleep sort (Windows API)
 
 ## License
 

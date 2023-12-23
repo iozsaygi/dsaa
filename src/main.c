@@ -13,6 +13,7 @@
 #include "queue.h"
 #include "selection_sort.h"
 #include "singly_linked_list.h"
+#include "sleep_sort.h"
 #include "stack.h"
 
 int main() {
@@ -52,7 +53,9 @@ int main() {
 
     // bt_test_0();
 
-    lcg_test_0();
+    // lcg_test_0();
+
+    sleep_sort_test_0();
 
     return 0;
 }
