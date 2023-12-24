@@ -11,6 +11,7 @@
 #include "linear_search.h"
 #include "newton_sqrt.h"
 #include "queue.h"
+#include "quick_sort.h"
 #include "selection_sort.h"
 #include "singly_linked_list.h"
 #include "sleep_sort.h"
@@ -55,7 +56,9 @@ int main() {
 
     // lcg_test_0();
 
-    sleep_sort_test_0();
+    // sleep_sort_test_0();
+
+    quick_sort_test_0();
 
     return 0;
 }

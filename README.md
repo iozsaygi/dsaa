@@ -25,6 +25,7 @@ It will hopefully grow over time.
 - Counting sort
 - Linear congruential generator
 - Sleep sort (Windows API)
+- Quick sort
 
 ## License
 
