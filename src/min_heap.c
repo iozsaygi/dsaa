@@ -1,5 +1,6 @@
 #include "min_heap.h"
 #include <assert.h>
+#include <stdio.h>
 
 mh_t* minHeap_allocate(size_t capacity) {
     assert(capacity > 0);
@@ -42,5 +43,9 @@ void minHeap_free(mh_t* mh) {
 
 // ------------------------- TESTS -------------------------
 void min_heap_test_0() {
+    mh_t* mh = minHeap_allocate(10);
+    printf("%d\n", minHeap_peek(mh));
+
+    minHeap_free(mh);
 }
 // ---------------------------------------------------------
