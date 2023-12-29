@@ -13,6 +13,7 @@ It will hopefully grow over time.
 - Doubly linked list
 - Hash table with linear probing
 - Binary tree
+- Min-heap
 
 ## Included algorithm implementations
 

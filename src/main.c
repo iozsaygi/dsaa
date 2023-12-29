@@ -9,6 +9,7 @@
 #include "hash_table.h"
 #include "linear_congruential_generator.h"
 #include "linear_search.h"
+#include "min_heap.h"
 #include "newton_sqrt.h"
 #include "queue.h"
 #include "quick_sort.h"
@@ -58,7 +59,9 @@ int main() {
 
     // sleep_sort_test_0();
 
-    quick_sort_test_0();
+    // quick_sort_test_0();
+
+    min_heap_test_0();
 
     return 0;
 }
