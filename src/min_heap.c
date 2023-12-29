@@ -34,6 +34,12 @@ size_t minHeap_findRightNodeIndex(size_t index) {
     return (index * 2) + 2;
 }
 
+void minHeap_free(mh_t* mh) {
+    assert(mh != NULL);
+    free(mh->data);
+    free(mh);
+}
+
 // ------------------------- TESTS -------------------------
 void min_heap_test_0() {
 }
