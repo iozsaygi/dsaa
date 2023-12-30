@@ -91,12 +91,12 @@ mh_t* minHeap_heapify(mh_t* mh, size_t index) { // NOLINT(*-no-recursion)
     size_t smallest = index;
 
     // Check if the left child is the smaller than current.
-    if (left < mh->length && mh->data[left] < mh->data[index]) {
+    if (left < mh->length && mh->data[left] < mh->data[smallest]) {
         smallest = left;
     }
 
     // Check if the right child is the smaller than current.
-    if (right < mh->length && mh->data[right] < mh->data[index]) {
+    if (right < mh->length && mh->data[right] < mh->data[smallest]) {
         smallest = right;
     }
 
@@ -129,6 +129,10 @@ void min_heap_test_0() {
     minHeap_insert(mh, -1);
     minHeap_insert(mh, 3);
     minHeap_insert(mh, 0);
+
+    printf("%d\n", minHeap_peek(mh));
+
+    minHeap_removeRoot(mh);
 
     printf("%d\n", minHeap_peek(mh));
 
