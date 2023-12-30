@@ -38,6 +38,12 @@ void minHeap_insert(mh_t* mh, int value);
 // Returns and removes root (smallest) element from min-heap.
 void minHeap_removeRoot(mh_t* mh);
 
+// Removes element with given index from min-heap.
+void minHeap_removeElementByIndex(mh_t* mh, size_t index);
+
+// Removes the given value from min-heap.
+void minHeap_removeElementByValue(mh_t* mh, int value);
+
 // Converts the internal array to the tree/heap structure to maintain the smallest element rule.
 mh_t* minHeap_heapify(mh_t* mh, size_t index);
 
