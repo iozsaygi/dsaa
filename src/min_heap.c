@@ -65,6 +65,51 @@ void minHeap_insert(mh_t* mh, int value) {
     }
 }
 
+void minHeap_removeRoot(mh_t* mh) {
+    assert(mh != NULL);
+
+    // Update the root element as the last element.
+    mh->data[0] = mh->data[mh->length - 1];
+
+    // Update the length of the heap.
+    mh->length--;
+
+    // Maintain the order of the min-heap.
+    minHeap_heapify(mh, 0);
+}
+
+mh_t* minHeap_heapify(mh_t* mh, size_t index) { // NOLINT(*-no-recursion)
+    if (mh->length <= 1) {
+        return mh;
+    }
+
+    // Calculate the left and right node indices of current index.
+    size_t left = minHeap_findLeftNodeIndex(index);
+    size_t right = minHeap_findRightNodeIndex(index);
+
+    // Keep track of smallest element in subtree.
+    size_t smallest = index;
+
+    // Check if the left child is the smaller than current.
+    if (left < mh->length && mh->data[left] < mh->data[index]) {
+        smallest = left;
+    }
+
+    // Check if the right child is the smaller than current.
+    if (right < mh->length && mh->data[right] < mh->data[index]) {
+        smallest = right;
+    }
+
+    if (smallest != index) {
+        int temp = mh->data[index];
+        mh->data[index] = mh->data[smallest];
+        mh->data[smallest] = temp;
+        mh = minHeap_heapify(mh, smallest);
+    }
+
+    return mh;
+}
+
 void minHeap_free(mh_t* mh) {
     assert(mh != NULL);
     free(mh->data);

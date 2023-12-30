@@ -35,6 +35,12 @@ size_t minHeap_findRightNodeIndex(size_t index);
 // Adds given value to the min-heap.
 void minHeap_insert(mh_t* mh, int value);
 
+// Returns and removes root (smallest) element from min-heap.
+void minHeap_removeRoot(mh_t* mh);
+
+// Converts the internal array to the tree/heap structure to maintain the smallest element rule.
+mh_t* minHeap_heapify(mh_t* mh, size_t index);
+
 // Clears allocated resources for the min-heap.
 void minHeap_free(mh_t* mh);
 
