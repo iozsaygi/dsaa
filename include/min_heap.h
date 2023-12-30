@@ -32,6 +32,9 @@ size_t minHeap_findLeftNodeIndex(size_t index);
 // Calculates the index of the right node for the node with given index.
 size_t minHeap_findRightNodeIndex(size_t index);
 
+// Adds given value to the min-heap.
+void minHeap_insert(mh_t* mh, int value);
+
 // Clears allocated resources for the min-heap.
 void minHeap_free(mh_t* mh);
 
