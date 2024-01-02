@@ -44,6 +44,7 @@ add_executable(dsaa src/main.c
         src/linear_congruential_generator.c
         src/sleep_sort.c
         src/quick_sort.c
-        src/min_heap.c)
+        src/min_heap.c
+        src/circular_singly_linked_list.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
