@@ -14,6 +14,7 @@ It will hopefully grow over time.
 - Hash table with linear probing
 - Binary tree
 - Min-heap
+- Circular singly linked list
 
 ## Included algorithm implementations
 
