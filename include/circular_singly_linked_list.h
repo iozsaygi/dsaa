@@ -17,6 +17,9 @@ typedef struct {
 // Allocates required resources.
 csll_t* circularSinglyLinkedList_allocate();
 
+// Allocates node with tiven value.
+struct cslln* circularSinglyLinkedList_allocateNode(int value);
+
 // Clears the allocated resources.
 void circularSinglyLinkedList_free(csll_t* csll);
 

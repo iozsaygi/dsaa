@@ -9,6 +9,14 @@ csll_t* circularSinglyLinkedList_allocate() {
     return csll;
 }
 
+struct cslln* circularSinglyLinkedList_allocateNode(int value) {
+    struct cslln* cslln = (struct cslln*) malloc(sizeof(struct cslln));
+    assert(cslln != NULL);
+    cslln->data = value;
+    cslln->next = NULL;
+    return cslln;
+}
+
 void circularSinglyLinkedList_free(csll_t* csll) {
     assert(csll != NULL);
 
