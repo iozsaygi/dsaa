@@ -17,8 +17,14 @@ typedef struct {
 // Allocates required resources.
 csll_t* circularSinglyLinkedList_allocate();
 
-// Adds node with given value.
-struct cslln* circularSinglyLinkedList_insert(csll_t* csll, int value);
+// Adds node with given value to the end of the list.
+void circularSinglyLinkedList_insert(csll_t* csll, struct cslln* cslln);
+
+// Removes node from list with given value.
+void circularSinglyLinkedList_removeByValue(csll_t* csll, int value);
+
+// Prints the values of each node in list.
+void circularSinglyLinkedList_log(const csll_t* csll);
 
 // Clears the allocated resources.
 void circularSinglyLinkedList_free(csll_t* csll);
