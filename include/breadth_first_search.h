@@ -23,6 +23,9 @@ struct bfs_node* bfs_createNode(int data);
 // Creates the graph with the given node count.
 struct bfs_graph* bfs_createGraph(int nodeCount);
 
+// Adds edge to the undirected graph.
+void bfs_addEdge(struct bfs_graph* graph, int source, int destination);
+
 // ------------------------- TESTS -------------------------
 void bfs_test_0();
 // ---------------------------------------------------------

@@ -23,6 +23,16 @@ struct bfs_graph* bfs_createGraph(int nodeCount) {
     return graph;
 }
 
+void bfs_addEdge(struct bfs_graph* graph, int source, int destination) {
+    struct bfs_node* node = bfs_createNode(destination);
+    node->next = graph->list[source].head;
+    graph->list[source].head = node;
+
+    node = bfs_createNode(source);
+    node->next = graph->list[destination].head;
+    graph->list[destination].head = node;
+}
+
 // ------------------------- TESTS -------------------------
 void bfs_test_0() {
 }
