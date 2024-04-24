@@ -68,6 +68,15 @@ int queue_dequeue(queue_t* queue) {
     return firstItem;
 }
 
+int queue_isEmpty(const queue_t* queue) {
+    assert(queue != NULL);
+    if (queue->length > 0) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
 void queue_log(const queue_t* queue) {
     assert(queue != NULL);
     assert(queue->data != NULL);

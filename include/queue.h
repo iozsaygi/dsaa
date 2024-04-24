@@ -22,6 +22,9 @@ void queue_enqueue(queue_t* queue, int value);
 // Returns an element from the start of queue.
 int queue_dequeue(queue_t* queue);
 
+// Returns '1' if the given queue is empty, '0' otherwise.
+int queue_isEmpty(const queue_t* queue);
+
 // Prints the values inside queue.
 void queue_log(const queue_t* queue);
 
