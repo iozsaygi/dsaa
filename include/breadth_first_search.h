@@ -26,6 +26,9 @@ struct bfs_graph* bfs_createGraph(int nodeCount);
 // Adds edge to the undirected graph.
 void bfs_addEdge(struct bfs_graph* graph, int source, int destination);
 
+// Executes the 'BFS' algorithm on given graph.
+void bfs_execute(struct bfs_graph* graph, int startingNode);
+
 // ------------------------- TESTS -------------------------
 void bfs_test_0();
 // ---------------------------------------------------------

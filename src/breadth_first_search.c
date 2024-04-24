@@ -24,6 +24,8 @@ struct bfs_graph* bfs_createGraph(int nodeCount) {
 }
 
 void bfs_addEdge(struct bfs_graph* graph, int source, int destination) {
+    assert(graph != NULL);
+
     struct bfs_node* node = bfs_createNode(destination);
     node->next = graph->list[source].head;
     graph->list[source].head = node;
@@ -33,7 +35,25 @@ void bfs_addEdge(struct bfs_graph* graph, int source, int destination) {
     graph->list[destination].head = node;
 }
 
+void bfs_execute(struct bfs_graph* graph, int startingNode) {
+    assert(graph != NULL);
+}
+
 // ------------------------- TESTS -------------------------
 void bfs_test_0() {
+    int nodeCount = 6;
+    struct bfs_graph* graph = bfs_createGraph(nodeCount);
+    bfs_addEdge(graph, 0, 1);
+    bfs_addEdge(graph, 0, 2);
+    bfs_addEdge(graph, 1, 3);
+    bfs_addEdge(graph, 1, 4);
+    bfs_addEdge(graph, 2, 4);
+    bfs_addEdge(graph, 3, 4);
+    bfs_addEdge(graph, 3, 5);
+    bfs_addEdge(graph, 4, 5);
+
+    bfs_execute(graph, 0);
+
+    free(graph);
 }
 // ---------------------------------------------------------
