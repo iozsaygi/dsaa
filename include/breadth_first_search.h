@@ -20,6 +20,9 @@ struct bfs_graph {
 // Creates node to be used during search.
 struct bfs_node* bfs_createNode(int data);
 
+// Creates the graph with the given node count.
+struct bfs_graph* bfs_createGraph(int nodeCount);
+
 // ------------------------- TESTS -------------------------
 void bfs_test_0();
 // ---------------------------------------------------------
