@@ -1,5 +1,6 @@
 #include "binary_search.h"
 #include "binary_tree.h"
+#include "breadth_first_search.h"
 #include "bubble_sort.h"
 #include "circular_singly_linked_list.h"
 #include "counting_sort.h"
@@ -64,7 +65,9 @@ int main() {
 
     // min_heap_test_0();
 
-    circular_singly_linked_list_test_0();
+    // circular_singly_linked_list_test_0();
+
+    bfs_test_0();
 
     return 0;
 }

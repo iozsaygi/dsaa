@@ -28,6 +28,7 @@ It will hopefully grow over time.
 - Linear congruential generator
 - Sleep sort (Windows API)
 - Quick sort
+- Breadth first search
 
 ## License
 

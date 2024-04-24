@@ -45,6 +45,7 @@ add_executable(dsaa src/main.c
         src/sleep_sort.c
         src/quick_sort.c
         src/min_heap.c
-        src/circular_singly_linked_list.c)
+        src/circular_singly_linked_list.c
+        src/breadth_first_search.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
