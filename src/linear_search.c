@@ -22,10 +22,10 @@ void ls_test_0() {
     array[3] = 68;
     array[4] = 101;
 
-    size_t firstPass = ls_findIndexOf(array, length, 14);
+    int firstPass = ls_findIndexOf(array, length, 14);
     assert(firstPass == INVALID_INDEX);
 
-    size_t secondPass = ls_findIndexOf(array, length, 68);
+    int secondPass = ls_findIndexOf(array, length, 68);
     assert(secondPass == 3);
 
     free(array);

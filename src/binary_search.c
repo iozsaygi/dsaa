@@ -32,10 +32,10 @@ void bs_test_0() {
     array[3] = 3;
     array[4] = 4;
 
-    size_t firstPass = bs_findIndexOf(array, length, 14);
+    int firstPass = bs_findIndexOf(array, length, 14);
     assert(firstPass == INVALID_INDEX);
 
-    size_t secondPass = bs_findIndexOf(array, length, 68);
+    int secondPass = bs_findIndexOf(array, length, 68);
     assert(secondPass == INVALID_INDEX);
 
     size_t thirdPass = bs_findIndexOf(array, length, 0);

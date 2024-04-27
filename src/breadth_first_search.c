@@ -37,6 +37,7 @@ void bfs_addEdge(struct bfs_graph* graph, int source, int destination) {
 
 void bfs_execute(struct bfs_graph* graph, int startingNode) {
     assert(graph != NULL);
+    assert(startingNode >= 0);
 }
 
 // ------------------------- TESTS -------------------------

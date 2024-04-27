@@ -38,6 +38,8 @@ void sleepSort_execute(int* array, size_t length) {
 
     free(threadHandles);
 #else
+    // Just trying to avoid build pipeline errors.
+    array[length - 1] = 1;
     printf("Sleep sort needs to be ported to your current OS first");
 #endif// DSAA_WINAPI
 }
