@@ -124,12 +124,6 @@ void bt_test_0() {
     bt_preOrderTraversal(NULL);
 
     struct btn* first = bt_insert(bt, 3);
-    struct btn* second = bt_insert(bt, 1);
-    struct btn* third = bt_insert(bt, 7);
-    struct btn* fourth = bt_insert(bt, 2);
-    struct btn* fifth = bt_insert(bt, 9);
-    struct btn* sixth = bt_insert(bt, 10);
-    struct btn* seventh = bt_insert(bt, 8);
 
     bt_preOrderTraversal(first);
     printf("\n------------------------------\n");

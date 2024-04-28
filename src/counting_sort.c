@@ -1,5 +1,6 @@
 #include "counting_sort.h"
 #include <assert.h>
+#include <limits.h>
 #include <stdio.h>
 
 int* cs_execute(const int* array, size_t length) {
@@ -20,7 +21,7 @@ int* cs_execute(const int* array, size_t length) {
         buffer[array[i]]++;
     }
 
-    for (size_t i = 1; i <= max; i++) {
+    for (int i = 1; i <= max; i++) {
         buffer[i] += buffer[i - 1];
     }
 

@@ -1,5 +1,6 @@
 #include "hash_table.h"
 #include <assert.h>
+#include <limits.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -120,7 +121,7 @@ void ht_test_0() {
     // Initialize empty table.
     for (size_t i = 0; i < ht->size; i++) {
         val_t val = {.data = INVALID_VALUE};
-        kvp_t kvp = {.key = NULL, val = val};
+        kvp_t kvp = {.key = {NULL}, .val = val};
         ht->data[i] = kvp;
     }
 
@@ -128,19 +129,19 @@ void ht_test_0() {
 
     // Create key value pairs.
     val_t fval = {.data = 1};
-    kvp_t fkvp = {.key = "first_key#1", .val = fval};
+    kvp_t fkvp = {.key = {"first_key#1"}, .val = fval};
 
     val_t sval = {.data = 2};
-    kvp_t skvp = {.key = "second_key#2", .val = sval};
+    kvp_t skvp = {.key = {"second_key#2"}, .val = sval};
 
     val_t tval = {.data = 3};
-    kvp_t tkvp = {.key = "third_key#3", .val = tval};
+    kvp_t tkvp = {.key = {"third_key#3"}, .val = tval};
 
     val_t foval = {.data = 4};
-    kvp_t fokvp = {.key = "fourth_key#4", .val = foval};
+    kvp_t fokvp = {.key = {"fourth_key#4"}, .val = foval};
 
     val_t fival = {.data = 5};
-    kvp_t fikvp = {.key = "fifth_key#5", .val = fival};
+    kvp_t fikvp = {.key = {"fifth_key#5"}, .val = fival};
 
     // Add key value pairs into hash table.
     ht_insert(ht, fkvp);
