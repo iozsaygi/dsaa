@@ -1,6 +1,20 @@
-#include "breadth_first_search.h"
 #include <assert.h>
+#include <stdio.h>
 #include <stdlib.h>
+
+struct bfs_node {
+    int data;
+    struct bfs_node* next;
+};
+
+struct bfs_list {
+    struct bfs_node* head;
+};
+
+struct bfs_graph {
+    int nodeCount;
+    struct bfs_list* list;
+};
 
 struct bfs_node* bfs_createNode(int data) {
     struct bfs_node* node = (struct bfs_node*) malloc(sizeof(struct bfs_node));
@@ -38,6 +52,34 @@ void bfs_addEdge(struct bfs_graph* graph, int source, int destination) {
 void bfs_execute(struct bfs_graph* graph, int startingNode) {
     assert(graph != NULL);
     assert(startingNode >= 0);
+
+    bool* visited = (bool*) malloc(graph->nodeCount * sizeof(bool));
+    for (int i = 0; i < graph->nodeCount; i++) {
+        visited[i] = false;
+    }
+
+    int* queue = (int*) malloc(graph->nodeCount * sizeof(int));
+    int front = 0, rear = 0;
+
+    visited[startingNode] = true;
+    queue[rear++] = startingNode;
+
+    while (front < rear) {
+        int currentNode = queue[front++];
+
+        struct bfs_node* temp = graph->list[currentNode].head;
+        while (temp != NULL) {
+            int adjNode = temp->data;
+            if (!visited[adjNode]) {
+                visited[adjNode] = true;
+                queue[rear++] = adjNode;
+            }
+            temp = temp->next;
+        }
+    }
+
+    free(visited);
+    free(queue);
 }
 
 // ------------------------- TESTS -------------------------
